@@ -5,10 +5,12 @@ import {Router} from 'react-router';
 import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
 import routes from './routes';
+import {loadCourses} from './actions/courseActions';
 import './styles/styles.css'; //Webpackd
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const store = configureStore();
+store.dispatch(loadCourses());
 
 render(
     <Provider store={store}>
